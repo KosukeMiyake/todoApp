@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct Task: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Task: Identifiable, Equatable {
+    let id = UUID()
+    var title: String
+    var checked: Bool
+    
+    init(title: String, checked: Bool) {
+        self.title = title
+        self.checked = checked
     }
-}
-
-#Preview {
-    Task()
 }

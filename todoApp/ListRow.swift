@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ListRow: View {
+    let task: String
+    var isCheck: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            if isCheck {
+                Text("☑️")
+                Text(task)
+                    .strikethrough()
+                    .fontWeight(.ultraLight)
+            } else {
+                Text("🔳")
+                Text(task)
+            }
+            
+        }
     }
 }
 
 #Preview {
-    ListRow()
+    ListRow(task: "hoge", isCheck: true)
 }
